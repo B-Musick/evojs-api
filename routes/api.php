@@ -21,3 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/sequences', [SequenceController::class, 'index']);
 Route::post('/sequences', [SequenceController::class, 'store']);
+Route::get('/sequences/{id}', [SequenceController::class, 'show']);
+Route::put('/sequences/{id}', [SequenceController::class, 'update']);
+Route::delete('/sequences/{id}', [SequenceController::class, 'destroy']);

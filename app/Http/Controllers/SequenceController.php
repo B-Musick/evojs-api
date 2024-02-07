@@ -28,7 +28,7 @@ class SequenceController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return Sequence::find($id);
     }
 
     /**
@@ -36,7 +36,9 @@ class SequenceController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $sequence = Sequence::find($id);
+        $sequence->update($request->all());
+        return $sequence;
     }
 
     /**
@@ -44,6 +46,6 @@ class SequenceController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        return Sequence::destroy($id);
     }
 }
